@@ -46,6 +46,9 @@ Install the following RubyGems.
 * webrat
 * merb-core
 * roman-merb_cucumber
+* moneta
+* deep_merge
+* bunny
 
 Ohai is also by Opscode and available on GitHub, http://github.com/opscode/ohai/tree/master.
 
