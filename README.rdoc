@@ -49,6 +49,8 @@ Install the following RubyGems.
 * moneta
 * deep_merge
 * bunny
+* merb-haml
+* jeweler
 
 Ohai is also by Opscode and available on GitHub, http://github.com/opscode/ohai/tree/master.
 
