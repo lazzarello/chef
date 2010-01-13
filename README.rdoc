@@ -51,6 +51,7 @@ Install the following RubyGems.
 * bunny
 * merb-haml
 * jeweler
+* libxml-ruby
 
 Ohai is also by Opscode and available on GitHub, http://github.com/opscode/ohai/tree/master.
 
