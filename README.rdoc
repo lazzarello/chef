@@ -36,6 +36,7 @@ Install these via your platform's preferred method; for example apt, yum, ports,
 * CouchDB
 * libxml2 development package (for webrat)
 * libxslt develoment package (for webrat)
+* RabbitMQ
 
 Install the following RubyGems.
 
@@ -70,6 +71,7 @@ The dev:features task:
 * Installs chef, chef-server, chef-server-slice gems. It will fail if required gems above are missing.
 * Starts chef-server on ports 4000 and 4001.
 * Starts chef-indexer.
+* Starts rabbitmq
 * Starts CouchDB on port 5984.
 * Starts the stompserver on port 61613.
 
