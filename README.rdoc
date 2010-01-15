@@ -33,7 +33,8 @@ In order to have a development environment where changes to the Chef code can be
 Install these via your platform's preferred method; for example apt, yum, ports, emerge, etc.
 
 * Git
-* CouchDB
+* CouchDB (0.9)
+* erlang 13.b.3
 * libxml2 development package (for webrat)
 * libxslt develoment package (for webrat)
 * RabbitMQ
@@ -53,6 +54,8 @@ Install the following RubyGems.
 * merb-haml
 * jeweler
 * libxml-ruby
+* thin
+* coderay
 
 Ohai is also by Opscode and available on GitHub, http://github.com/opscode/ohai/tree/master.
 
@@ -65,29 +68,32 @@ roman-merb_cucumber is available from GitHub:
 Once everything is installed, run the dev:features rake task. Since the features do integration testing, root access is required.
 
   sudo rake dev:features
+  copy the keys from /tmp/chef_integration to /etc/chef
 
 The dev:features task:
 
 * Installs chef, chef-server, chef-server-slice gems. It will fail if required gems above are missing.
-* Starts chef-server on ports 4000 and 4001.
-* Starts chef-indexer.
+* Starts chef-server on ports 4000.
+* Starts solr.
 * Starts rabbitmq
 * Starts CouchDB on port 5984.
-* Starts the stompserver on port 61613.
 
 You'll know its running when you see:
 
    ~ Activating slice 'ChefServerSlice' ...
   merb : worker (port 4000) ~ Starting Mongrel at port 4000
   merb : worker (port 4000) ~ Successfully bound to port 4000
-  merb : worker (port 4001) ~ Starting Mongrel at port 4001
-  merb : worker (port 4001) ~ Successfully bound to port 4001
 
 You'll want to leave this terminal running the dev environment.
 
-== Web Interface:
+== Command line interface
 
-With the dev environment running, you can now access the web interface via http://localhost:4000/. Supply an OpenID to log in.
+build gems with `rake gem`
+Install the chef gem
+initialize a new client key
+knife configure --initial
+
+== Web Interface:
 
 == Spec testing:
 
