@@ -32,8 +32,8 @@ In order to have a development environment where changes to the Chef code can be
 
 Install these via your platform's preferred method; for example apt, yum, ports, emerge, etc.
 
-* Git
-* CouchDB (0.9)
+* Git ( >= 1.6.0)
+* CouchDB (>= 0.9)
 * erlang 13.b.3
 * libxml2 development package (for webrat)
 * libxslt develoment package (for webrat)
@@ -47,8 +47,12 @@ Install the following RubyGems.
 * cucumber
 * webrat
 * merb-core
+* merb-slices
+* merb-assets > 1.0
+* merb-helpers > 1.0
 * roman-merb_cucumber
 * moneta
+* uuidtools
 * deep_merge
 * bunny
 * merb-haml
@@ -57,12 +61,18 @@ Install the following RubyGems.
 * thin
 * coderay
 * mixlib-log (1.1.0) from github opscode/mixlib-log
+* mixlib-authentication from github opscode/mixlib-authentication
 
 Ohai is also by Opscode and available on GitHub, http://github.com/opscode/ohai/tree/master.
 
 roman-merb_cucumber is available from GitHub:
 
   gem install --source http://gems.github.com/ roman-merb_cucumber
+
+== building the gems ==
+
+rake gem
+install all gems in the pkg directories of each chef-* directory
 
 == Starting the Environment:
 
@@ -89,10 +99,12 @@ You'll want to leave this terminal running the dev environment.
 
 == Command line interface
 
-build gems with `rake gem`
-Install the chef gem
-initialize a new client key
-knife configure --initial
+initialize server
+  knife configure -i
+
+initialize a new client key on the server
+  knife client create <foo>
+  copy ~/.chef/ to client host
 
 == Web Interface:
 
