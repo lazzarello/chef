@@ -63,6 +63,7 @@ Install the following RubyGems.
 * mixlib-log (1.1.0) from github opscode/mixlib-log
 * mixlib-authentication from github opscode/mixlib-authentication
 
+
 Ohai is also by Opscode and available on GitHub, http://github.com/opscode/ohai/tree/master.
 
 roman-merb_cucumber is available from GitHub:
@@ -99,12 +100,10 @@ You'll want to leave this terminal running the dev environment.
 
 == Command line interface
 
-initialize server
-  knife configure -i
-
-initialize a new client key on the server
-  knife client create <foo>
-  copy ~/.chef/ to client host
+build gems with `rake gem`
+Install the chef gem
+initialize a new client key
+knife configure --initial
 
 == Web Interface:
 
